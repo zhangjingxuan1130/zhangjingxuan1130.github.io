@@ -27,7 +27,7 @@
             width: 100%;
             height: 100vh;
             /* 示例背景图，可直接替换为你的图片 */
-            background: url("https://picsum.photos/id/1018/1920/1080") center/cover no-repeat;
+            background: url("R-C.jpg") center/cover no-repeat;
             z-index: -2;
             transition: transform 0.2s ease-out;
         }
@@ -134,7 +134,10 @@
     </style>
 </head>
 <body>
-   
+   <!-- 背景层 - 鼠标跟随动态 -->
+    <div class="background-container" id="bg"></div>
+    <div class="overlay"></div>
+
     <!-- 主内容 -->
     <div class="content">
         <!-- 个人信息 -->
