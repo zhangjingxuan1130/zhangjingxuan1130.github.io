@@ -4,9 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人学习站点</title>
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人学习站点</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        /* 背景容器 - 鼠标跟随动态效果 */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* 示例背景图，可直接替换为你的图片 */
+            background: url("https://picsum.photos/id/1018/1920/1080") center/cover no-repeat;
+            z-index: -2;
+            transition: transform 0.2s ease-out;
+        }
+
+        /* 背景遮罩 - 增强文字可读性 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+
+        /* 主内容容器 */
+        .content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        /* 头部信息样式 */
+        .header-info {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .header-info h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header-info p {
+            font-size: 20px;
+            color: #34495e;
+        }
+
+        /* 右下角作业目录栏 - 核心修改 */
+        .homework-sidebar {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            /* 控制大小：宽不超屏幕1/4，高不超屏幕1/4 */
+            width: min(22%, 300px);
+            max-height: 22vh;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        .homework-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+
+        .homework-list {
+            list-style: none;
+        }
+
+        .homework-item {
+            margin: 8px 0;
+        }
+
+        /* 小行字点击跳转样式 */
+        .homework-item a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: block;
+            line-height: 1.5;
+        }
+
+        .homework-item a:hover {
+            color: #2980b9;
+            padding-left: 5px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .homework-sidebar {
+                width: 80%;
+                max-height: 30vh;
+                right: 10%;
+                bottom: 20px;
+            }
+            .header-info h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>学号：25051030334</h1>
-    <p>网页设计</p>
+    <!-- 背景层 - 鼠标跟随动态 -->
+    <div class="background-container" id="bg"></div>
+    <div class="overlay"></div>
+
+    <!-- 主内容 -->
+    <div class="content">
+        <!-- 个人信息 -->
+        <div class="header-info">
+            <h1>学号：25051030334</h1>
+            <p>网页设计</p>
+        </div>
+    </div>
+
+    <!-- 右下角作业目录栏 -->
+    <div class="homework-sidebar">
+        <h3 class="homework-title">📚 作业目录</h3>
+        <ul class="homework-list">
+            <li class="homework-item">
+                <a href="homework1.html">作业1：HTML基础结构</a>
+            </li>
+            <li class="homework-item">
+                <p>作业2：CSS样式美化</p>
+            </li>
+            <li class="homework-item">
+                <p>作业3：响应式布局</p>
+            </li>
+            <li class="homework-item">
+                <p>作业4：JavaScript交互</p>
+            </li>
+            <li class="homework-item">
+                <p>作业5：综合项目实战</p>
+            </li>
+            <li class="homework-item">
+                <p>作业6：GitHub Pages部署.</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // 鼠标跟随背景动态效果
+        const bg = document.getElementById('bg');
+        const speed = 20; // 控制移动幅度，数值越小越灵敏
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX * 2) / speed;
+             const y = (window.innerHeight - e.pageY * 2) / speed;
+             bg.style.transform = `translate(${x}px, ${y}px)`;
+         });
+     </script>
 </body>
 </html>
