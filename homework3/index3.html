@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变效果</title>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-image: linear-gradient(180deg,rgb(69, 50, 244),rgb(242, 99, 228),rgb(247, 165, 22));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .two{
+            width: 300px;
+            height: 300px;
+            background-image: linear-gradient(180deg,rgb(241, 128, 76),rgb(245, 251, 70));
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 10px 30px 20px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .three{
+            width: 250px;
+            height: 180px;
+            background-color: rgb(130, 134, 137);
+            border-radius: 20px;
+            margin: 60px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .four{
+            width: 200px;
+            height: 130px;
+            background-image: linear-gradient(135deg,rgb(158, 247, 235),rgb(122, 156, 247));
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .triangle{
+            width: 0;
+            height: 0;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 30px solid rgb(49, 19, 19);
+            
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="two">
+            <div class="three">
+                <div class="four">
+                    <div class="btn">
+                        <div class="triangle">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+</body>
+</html>
