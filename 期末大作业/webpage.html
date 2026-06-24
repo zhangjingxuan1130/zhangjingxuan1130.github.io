@@ -12,16 +12,20 @@
             font-family: "Microsoft Yahei", sans-serif;
         }
 
-        /* ⑥ 点阵深色背景 匹配原图网点效果 */
         body {
             background: #070a0e;
             background-image: radial-gradient(#20262d 1px, transparent 1px);
             background-size: 16px 16px;
             color: #fff;
+            padding: 100px;
         }
 
-        /* ========== ① 导航栏 flex 布局 ========== */
         header.nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,12 +78,11 @@
             font-weight: 500;
         }
 
-        /* ========== ② 标题区域 渐变文字 ========== */
         .title-box {
             text-align: center;
             margin: 10px 0 35px;
         }
-        /* 小标题：渐变从深绿到浅绿 */
+        
         .beta-text {
             font-size: 16px;
             margin-bottom: 8px;
@@ -87,13 +90,13 @@
             background-clip: text;
             color: transparent;
         }
-        /* 大标题：纯白色，取消渐变 */
+        
         .main-title {
             font-size: 44px;
             color: #ffffff;
         }
 
-        /* ========== ③ 文本输入框（带提示语） ========== */
+        
         .input-wrap {
             width: 540px;
             margin: 0 auto 40px;
@@ -116,7 +119,7 @@
             color: #6b7889;
         }
 
-        /* ========== ④ 输入框底部按钮 flex 布局 ========== */
+        
         .input-bottom {
             display: flex;
             justify-content: space-between;
@@ -160,7 +163,7 @@
             justify-content: center;
         }
 
-        /* ========== ⑤ 下方任务卡片 flex 两栏布局 ========== */
+        
         .task-container {
             width: 640px;
             margin: 0 auto;
@@ -193,12 +196,12 @@
             color: #d0d9e4;
         }
 
-        /* ========== ⑥ 底部多层渐进渐变背景（已修改完成） ========== */
+        
         .bottom-gradient-block {
             width: 100%;
             height: 160px;
             margin-top: 60px;
-            /* 多色标分段渐进过渡，满足题目渐进背景要求 */
+            
             background: linear-gradient(
                 180deg,
                 transparent 0%,
@@ -216,7 +219,7 @@
     </style>
 </head>
 <body>
-    <!-- ① 导航栏 -->
+    
     <header class="nav">
         <div class="nav-left">
             <div class="logo">TRAE</div>
@@ -234,13 +237,13 @@
         </div>
     </header>
 
-    <!-- ② 渐变标题区域 -->
+    
     <div class="title-box">
         <div class="beta-text">全新 TRAE Work BETA</div>
         <h1 class="main-title">不止于码 大有可为</h1>
     </div>
 
-    <!-- ③ 文本框 + ④ flex按钮区 -->
+    
     <div class="input-wrap">
         <textarea id="prompt-input" placeholder="描述你想做的事，剩下的交给 TRAE Work"></textarea>
         <div class="input-bottom">
@@ -257,7 +260,7 @@
         </div>
     </div>
 
-    <!-- ⑤ flex 两栏任务卡片 -->
+    
     <div class="task-container">
         <div class="task-card">
             <div class="card-icon">📄</div>
@@ -285,7 +288,7 @@
         </div>
     </div>
 
-   <!-- ⑥ 底部渐进渐变背景区域 -->
+   
     <div class="bottom-gradient-block">
         INTRODUCING NEW TRAE Work
     </div>
